@@ -86,9 +86,10 @@ WSGI_APPLICATION = 'mynotes.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'DB_NAME',
-        'PASSWORD':'DB_PASSWORD',
-        'HOST': 'HOST',   # Or an IP Address that your DB is hosted on
+        'NAME': 'notes_reactdjango',
+        'USER': 'root',        
+        'PASSWORD':'Sridhar4444!',
+        'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
         'PORT': '3306',
     }
 }
