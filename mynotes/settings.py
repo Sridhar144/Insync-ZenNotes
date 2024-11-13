@@ -83,17 +83,30 @@ WSGI_APPLICATION = 'mynotes.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+from dotenv import load_dotenv
+load_dotenv()
+
+env_path = Path('.') / '.env'
+load_dotenv(dotenv_path=env_path)
+import os
+DB_USER=os.getenv('DB_USER')
+DB_HOST=os.getenv('DB_HOST')
+DB_PASSWORD=os.getenv('DB_PASSWORD')
+DB_PORT=os.getenv('DB_PORT')
+DB_NAME=os.getenv('DB_NAME')
+# Database
+# https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'notes_reactdjango',
-        'USER': 'root',        
-        'PASSWORD':'Sridhar4444!',
-        'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
-        'PORT': '3306',
+        'NAME':DB_NAME,
+        'USER':DB_USER,
+        'PASSWORD':DB_PASSWORD,
+        'HOST':DB_HOST,
+        'PORT':DB_PORT
+
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
